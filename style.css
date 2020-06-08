@@ -1,0 +1,110 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline:none !important
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#message-list-container {
+    overflow: auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3px;
+    background-color: rgb(248, 250, 248);
+}
+
+#message-list-container div {    
+    padding: 10px;
+    max-width: 80%;
+    margin: 10px 0;
+    word-break: break-word;
+}
+
+#message-list-container div:not(.ownMessage) {
+    background-color: rgb(204, 211, 204);
+    border-radius: 10% 0%;
+}
+
+#message-list-container .ownMessage {
+    align-self: flex-end;
+    background-color:rgb(130, 146, 240);
+    border-radius: 0% 10%;
+}
+
+#message-form-container {
+    padding: 0 5px;
+}
+#message-form-container form {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text] {
+    padding: 10px;
+    border:0;
+    border-bottom:1px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+
+}
+input[type=text]:focus {
+    background-color: #5cbdcc;
+}
+
+button[type=submit] {
+    cursor: pointer;
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+}
+
+@media only screen and (min-width: 580px) and (min-height: 500px) {
+    main {
+        align-items: center;
+        margin-top: 5vh;
+    }
+
+    #message-form-container, #message-list-container {
+        width: 600px;
+    }
+
+    #message-form-container form {
+        flex-direction: row;
+    }
+
+    #message-user {
+        width: 100px;
+    }
+
+    #message-text {
+        flex: 1;
+        margin: 0 5px;
+    }
+}
+
+@media only screen and (min-width: 580px) and (max-height: 499px) {
+    #message-list-container {
+        height: 65vh;
+    }
+
+    #message-form-container {
+        height: 30vh;
+    }
+
+}
