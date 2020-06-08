@@ -1,3 +1,5 @@
+import notifyMe from './notification.js';
+
 const SERVER_IP_ADDRESS = 'http://35.157.80.184:8080/';
 
 const socket = io(SERVER_IP_ADDRESS);
@@ -11,7 +13,9 @@ let userName = '';
 
 socket.on('message', ({ user, message }) => {
     if (user === userName) return;
-    appendMessage(`${user}: ${message}`);
+    const messageData = `${user}: ${message}`;
+    appendMessage(messageData);
+    notifyMe(messageData);
 })
 
 messageFormContainer.addEventListener('submit', e => {
