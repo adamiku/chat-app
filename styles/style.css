@@ -14,15 +14,16 @@ html, body {
 main {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 #message-list-container {
     overflow: auto;
-    height: 80vh;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    padding: 0 3px;
-    background-color: rgb(248, 250, 248);
+    padding: 0 5px;
+    background-color: rgb(226, 229, 226);
 }
 
 #message-list-container div {    
@@ -77,7 +78,6 @@ button[type=submit] {
 @media only screen and (min-width: 580px) and (min-height: 500px) {
     main {
         align-items: center;
-        margin-top: 5vh;
     }
 
     #message-form-container, #message-list-container {
@@ -96,15 +96,4 @@ button[type=submit] {
         flex: 1;
         margin: 0 5px;
     }
-}
-
-@media only screen and (min-width: 580px) and (max-height: 499px) {
-    #message-list-container {
-        height: 65vh;
-    }
-
-    #message-form-container {
-        height: 30vh;
-    }
-
 }
